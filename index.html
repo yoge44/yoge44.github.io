@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="世说心语 - 深度情感心理与人生哲学的探索平台。提供心理疏导、情感共鸣、生活感悟、经典语录及自我成长指南，助您在喧嚣中找到内心的宁静与力量。">
+    <meta name="keywords" content="世说心语,心理疏导,情感共鸣,人生感悟,自我成长,情感咨询,心灵鸡汤">
+    <title>世说心语 - 深度情感与心灵成长的探索指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5d738a;
+            --secondary-color: #8fa3b8;
+            --accent-color: #d4a373;
+            --bg-color: #f7f9fb;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #64748b;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --spacing-xl: 64px;
+            --radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4a6985 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background-color: #c08d5f;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            padding: var(--spacing-xl) 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        /* Article List */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+            border-left: 4px solid var(--accent-color);
+            padding-left: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .article-card {
+                flex-direction: row;
+                height: 220px;
+            }
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e2e8f0;
+        }
+
+        @media (min-width: 768px) {
+            .article-image {
+                width: 300px;
+                height: 100%;
+            }
+        }
+
+        .article-info {
+            padding: var(--spacing-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-category {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: var(--spacing-md);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+
+        .widget {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .quote-list li {
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .quote-list li::before {
+            content: '“';
+            position: absolute;
+            left: 0;
+            top: -5px;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .quote-author {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .topic-tag {
+            display: inline-block;
+            background: #f1f5f9;
+            color: var(--text-light);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            transition: all 0.2s;
+        }
+
+        .topic-tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--spacing-xl) 0;
+            background-color: #fff;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            padding-left: 20px;
+            border-left: 2px solid var(--accent-color);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 var(--spacing-sm);
+            }
+
+            nav {
+                display: none; /* Simplified mobile view */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                height: auto;
+            }
+
+            .article-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color);">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                世说心语
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">情感共鸣</a></li>
+                    <li><a href="#">人生感悟</a></li>
+                    <li><a href="#">心理疏导</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>在喧嚣中，听见内心的声音</h1>
+            <p>世说心语致力于提供温暖的文字陪伴与专业的心理视角，帮助您梳理情绪、洞察自我，在复杂的世界中找到内心的平静与力量。</p>
+            <a href="#" class="cta-button">开始探索</a>
+        </div>
+    </section>
+
+    <div class="container features">
+        <div class="features-grid">
+            <article class="feature-card">
+                <div class="feature-icon">✦</div>
+                <h3>情感共鸣</h3>
+                <p>深度剖析现代人的情感困惑，提供理解与接纳，让您不再孤单。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">❖</div>
+                <h3>人生感悟</h3>
+                <p>从平凡故事中提炼智慧，用哲学视角重新审视生活的意义。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">◈</div>
+                <h3>心理疏导</h3>
+                <p>提供实用的心理调适方法与建议，助您走出情绪低谷。</p>
+            </article>
+        </div>
+    </div>
+
+    <main class="container main-content">
+        <section class="articles">
+            <div class="section-title">
+                <span>精选文章</span>
+                <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看更多 →</a>
+            </div>
+            
+            <div class="article-list">
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/peace/300/400" alt="宁静的湖面" class="article-image">
+                    <div class="article-info">
+                        <div>
+                            <span class="article-category">心灵成长</span>
+                            <h2 class="article-title"><a href="#">如何在独处中重建自我秩序</a></h2>
+                            <p class="article-excerpt">在这个信息过载的时代，学会独处不是逃避，而是一种重建内心秩序的高级能力。本文将探讨如何通过独处找回专注与宁静。</p>
+                        </div>
+                        <div class="article-meta">
+                            <span>2023-10-24</span>
+                            <span>阅读 3,421</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/rain/300/400" alt="雨后的街道" class="article-image">
+                    <div class="article-info">
+                        <div>
+                            <span class="article-category">情感心理</span>
+                            <h2 class="article-title"><a href="#">接纳不完美的自己：一场温柔的修行</a></h2>
+                            <p class="article-excerpt">我们总是苛求完美，却忽略了不完美才是生命的常态。学会与自己和解，是通往内心平静的第一步。</p>
+                        </div>
+                        <div class="article-meta">
+                            <span>2023-10-22</span>
+                            <span>阅读 5,108</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/forest/300/400" alt="迷雾森林" class="article-image">
+                    <div class="article-info">
+                        <div>
+                            <span class="article-category">生活智慧</span>
+                            <h2 class="article-title"><a href="#">慢下来：从焦虑时代突围的生活哲学</a></h2>
+                            <p class="article-excerpt">焦虑往往源于对未来的过度担忧。通过调整生活节奏，关注当下，我们可以重新获得掌控生活的能力。</p>
+                        </div>
+                        <div class="article-meta">
+                            <span>2023-10-20</span>
+                            <span>阅读 2,890</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside>
+            <div class="widget">
+                <h3>热门话题</h3>
+                <div>
+                    <a href="#" class="topic-tag">#情绪管理</a>
+                    <a href="#" class="topic-tag">#亲密关系</a>
+                    <a href="#" class="topic-tag">#自我价值</a>
+                    <a href="#" class="topic-tag">#断舍离</a>
+                    <a href="#" class="topic-tag">#正念冥想</a>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3>经典语录</h3>
+                <ul class="quote-list">
+                    <li>
+                        <p class="quote-text">“生活不是等待风暴过去，而是学会在雨中翩翩起舞。”</p>
+                        <p class="quote-author">—— 维维安·格林</p>
+                    </li>
+                    <li>
+                        <p class="quote-text">“我们终此一生，就是要摆脱他人的期待，找到真正的自己。”</p>
+                        <p class="quote-author">——《无声告白》</p>
+                    </li>
+                    <li>
+                        <p class="quote-text">“万物皆有裂痕，那是光照进来的地方。”</p>
+                        <p class="quote-author">—— 莱昂纳德·科恩</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>关注我们</h3>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 10px;">订阅周报，获取最新的心理成长指南与情感解读。</p>
+                <form style="display: flex; gap: 5px;">
+                    <input type="email" placeholder="您的邮箱" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <button type="button" style="padding: 8px 12px; background: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">订阅</button>
+                </form>
+            </div>
+        </aside>
+    </main>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">常见问题</div>
+            
+            <div class="faq-item">
+                <div class="faq-question">这里的内容适合什么样的人阅读？</div>
+                <div class="faq-answer">
+                    世说心语的内容适合所有正在经历生活迷茫、情感困惑，或渴望提升自我认知、寻找生活智慧的读者。无论您是寻求情感共鸣，还是希望学习心理调节技巧，这里都有适合您的文章。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">文章中的建议能替代专业的心理治疗吗？</div>
+                <div class="faq-answer">
+                    不能。我们提供的文章旨在提供科普知识、情感支持和生活建议。如果您有严重的心理困扰或心理健康问题，请务必寻求专业心理咨询师或医生的帮助。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何联系投稿或合作？</div>
+                <div class="faq-answer">
+                    您可以通过页面底部的联系方式与我们取得联系，或发送邮件至投稿邮箱。我们欢迎分享真实经历、专业见解或温暖故事的优质作者。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>世说心语</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">致力于打造温暖、专业的心灵成长社区，用文字照亮内心的角落。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">情感专栏</a></li>
+                        <li><a href="#">心理科普</a></li>
+                        <li><a href="#">人生随笔</a></li>
+                        <li><a href="#">音频节目</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@shishuoxinyu.com</li>
+                        <li>微信：shishuoxinyu_official</li>
+                        <li>地址：中国·上海市（虚拟地址）</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 世说心语. All rights reserved. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Simple form interaction feedback (visual only)
+            const form = document.querySelector('form');
+            const input = form.querySelector('input');
+            const button = form.querySelector('button');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if(input.value.trim() !== "") {
+                    const originalText = button.innerText;
+                    button.innerText = "订阅成功";
+                    button.style.backgroundColor = "#27ae60";
+                    input.value = "";
+                    setTimeout(() => {
+                        button.innerText = originalText;
+                        button.style.backgroundColor = "";
+                    }, 3000);
+                }
+            });
+        });
+    </script>
+</body>
+              </html>

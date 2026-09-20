@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="萌站 - 全球最全的二次元萌系资源与社区平台，汇集热门动漫、精美壁纸、可爱表情包及同人创作，为您打造沉浸式的治愈系网络空间。">
+    <meta name="keywords" content="萌站,二次元,动漫,壁纸,表情包,同人,治愈,萌系">
+    <title>萌站-治愈系二次元萌宠与萌图资源分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #FF85A2;
+            --primary-hover: #FF6B8B;
+            --secondary-color: #A8E6CF;
+            --bg-color: #FFF9FA;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-sub: #777777;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(255, 133, 162, 0.15);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 107, 139, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #FF85A2 0%, #FF6B8B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 15px 20px;
+            padding-right: 50px;
+            border-radius: 30px;
+            border: 2px solid #eee;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cat-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 133, 162, 0.25);
+        }
+
+        .cat-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .cat-card p {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        /* Content Grid (Masonry-like) */
+        .content-area {
+            padding: 40px 0 80px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 20px;
+        }
+
+        .item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .item:hover img {
+            transform: scale(1.05);
+        }
+
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .item:hover .item-overlay {
+            opacity: 1;
+        }
+
+        .item-tag {
+            font-size: 12px;
+            background: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Featured Section */
+        .featured {
+            background-color: #fff;
+            padding: 60px 0;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .featured-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .featured-img {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-info {
+            flex: 1;
+        }
+
+        .featured-info h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .featured-info p {
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .meta-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* Community Section */
+        .community {
+            padding: 40px 0;
+        }
+
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .topic-item:hover {
+            transform: translateX(5px);
+        }
+
+        .topic-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: #eee;
+            flex-shrink: 0;
+        }
+
+        .topic-info {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .topic-meta {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .topic-stats {
+            text-align: right;
+            margin-left: 20px;
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .grid-layout {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 250px;
+            }
+
+            .featured-content {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            🌸 <span>萌站</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">动漫</a></li>
+                <li><a href="#">壁纸</a></li>
+                <li><a href="#">表情包</a></li>
+                <li><a href="#">社区</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">投稿</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>发现治愈系萌物</h1>
+        <p>汇集全网最可爱的二次元萌宠、动漫角色与精美同人创作，为您带来每日份的治愈与快乐。</p>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索你喜欢的萌物或作品...">
+            <button>🔍</button>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="section-title">
+            <h3>萌系分类</h3>
+            <a href="#" style="font-size:14px; color:var(--primary-color);">查看全部 &rarr;</a>
+        </div>
+        <div class="category-grid">
+            <div class="cat-card">
+                <span class="cat-icon">🐱</span>
+                <h3>萌宠专区</h3>
+                <p>猫咪狗狗的可爱瞬间</p>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🎌</span>
+                <h3>动漫角色</h3>
+                <p>热门番剧与原创角色</p>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🎨</span>
+                <h3>同人创作</h3>
+                <p>画师与作者的作品集</p>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">📱</span>
+                <h3>表情包</h3>
+                <p>趣味社交必备素材</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Content -->
+    <section class="featured">
+        <div class="section-title">
+            <h3>今日推荐</h3>
+        </div>
+        <div class="featured-content">
+            <div class="featured-img">
+                <img src="https://picsum.photos/seed/animelove/600/400" alt="推荐图片">
+            </div>
+            <div class="featured-info">
+                <div class="meta-tags">
+                    <span class="meta-tag">#治愈</span>
+                    <span class="meta-tag">#二次元</span>
+                    <span class="meta-tag">#原创</span>
+                </div>
+                <h2>《夏日的午后》同人图集</h2>
+                <p>这是一组充满夏日气息的同人创作，画师通过细腻的笔触描绘了角色们在树荫下的静谧时光。色彩清新自然，充满了对生活的热爱与向往。如果你也喜欢这种慢节奏的治愈系风格，千万不要错过。</p>
+                <div style="display:flex; gap:10px;">
+                    <button class="btn btn-primary">立即阅读</button>
+                    <button class="btn btn-outline">收藏作品</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Grid -->
+    <section class="content-area">
+        <div class="section-title">
+            <h3>最新动态</h3>
+            <div style="display:flex; gap:10px;">
+                <button class="btn btn-outline" style="padding:4px 12px; font-size:12px;">综合</button>
+                <button class="btn btn-outline" style="padding:4px 12px; font-size:12px;">最新</button>
+                <button class="btn btn-outline" style="padding:4px 12px; font-size:12px;">最热</button>
+            </div>
+        </div>
+        <div class="grid-layout">
+            <div class="item">
+                <img src="https://picsum.photos/seed/cat1/400/400" alt="萌宠">
+                <div class="item-overlay">
+                    <span class="item-tag">萌宠</span>
+                    <span class="item-title">午睡的小猫咪</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/seed/anime2/400/300" alt="动漫">
+                <div class="item-overlay">
+                    <span class="item-tag">动漫</span>
+                    <span class="item-title">魔法少女设定</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/seed/dog3/400/500" alt="萌宠">
+                <div class="item-overlay">
+                    <span class="item-tag">萌宠</span>
+                    <span class="item-title">贪吃的金毛</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/seed/art4/400/400" alt="同人">
+                <div class="item-overlay">
+                    <span class="item-tag">同人</span>
+                    <span class="item-title">赛博朋克风</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/seed/meme5/400/300" alt="表情包">
+                <div class="item-overlay">
+                    <span class="item-tag">表情包</span>
+                    <span class="item-title">搞怪猫咪</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/seed/flower6/400/400" alt="风景">
+                <div class="item-overlay">
+                    <span class="item-tag">风景</span>
+                    <span class="item-title">花园漫步</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/seed/boy7/400/300" alt="动漫">
+                <div class="item-overlay">
+                    <span class="item-tag">动漫</span>
+                    <span class="item-title">校园生活</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/seed/girl8/400/500" alt="同人">
+                <div class="item-overlay">
+                    <span class="item-tag">同人</span>
+                    <span class="item-title">温柔日常</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <div class="section-title">
+            <h3>热门话题</h3>
+        </div>
+        <div class="topic-list">
+            <div class="topic-item">
+                <img src="https://picsum.photos/seed/user1/100/100" class="topic-avatar" alt="用户头像">
+                <div class="topic-info">
+                    <div class="topic-title">大家觉得哪只猫最可爱？快来投票！</div>
+                    <div class="topic-meta">发布者：萌宠控 · 2小时前 · 234 回复</div>
+                </div>
+                <div class="topic-stats">🔥 5.2k</div>
+            </div>
+            <div class="topic-item">
+                <img src="https://picsum.photos/seed/user2/100/100" class="topic-avatar" alt="用户头像">
+                <div class="topic-info">
+                    <div class="topic-title">【分享】我画了三个小时的治愈系插画</div>
+                    <div class="topic-meta">发布者：插画师小A · 5小时前 · 89 回复</div>
+                </div>
+                <div class="topic-stats">❤️ 1.8k</div>
+            </div>
+            <div class="topic-item">
+                <img src="https://picsum.photos/seed/user3/100/100" class="topic-avatar" alt="用户头像">
+                <div class="topic-info">
+                    <div class="topic-title">求推荐几部适合周末放松的治愈番剧</div>
+                    <div class="topic-meta">发布者：动漫迷 · 8小时前 · 56 回复</div>
+                </div>
+                <div class="topic-stats">💬 320</div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom:15px;">
+                    🌸 <span>萌站</span>
+                </div>
+                <p style="font-size:14px; color:#888;">
+                    萌站致力于为二次元爱好者提供一个分享、发现与交流的平台。这里汇聚了万千萌物与美好瞬间。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源分类</h4>
+                <ul>
+                    <li><a href="#">萌宠专区</a></li>
+                    <li><a href="#">动漫壁纸</a></li>
+                    <li><a href="#">同人漫画</a></li>
+                    <li><a href="#">表情包下载</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">官方微博</a></li>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">Bilibili</a></li>
+                    <li><a href="#">Discord社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 萌站 版权所有. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

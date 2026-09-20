@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quotev主页-互动故事平台与个性化测评指南</title>
+    <meta name="description" content="quotev主页提供丰富的互动故事阅读体验、个性化性格测评和创意写作社区。探索热门测试、阅读同人小说、创作原创内容，加入全球最大的互动娱乐社区。">
+    <meta name="keywords" content="quotev主页,quotev,互动故事,性格测试,同人小说,在线测评">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --primary-hover: #5649c0;
+            --secondary-color: #a29bfe;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIiBmaWxsLW9wYWNpdHk9IjAuMDUiIGZpbGw9IiNmZmYiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEwIi8+PC9zdmc+');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .search-bar {
+            background: white;
+            padding: 8px;
+            border-radius: 30px;
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 30px;
+        }
+
+        .search-bar button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .search-bar button:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Categories */
+        .categories {
+            max-width: 1200px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .cat-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cat-title {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .cat-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        /* Story/Test Card */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            height: 160px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-type {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-bottom: 20px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            border-top: 1px solid #f1f2f6;
+            padding-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #dfe6e9;
+        }
+
+        .author-name {
+            font-weight: 500;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-box {
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #636e72;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #636e72;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 15px;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .search-bar input {
+                border-radius: 8px;
+                margin-bottom: 8px;
+            }
+
+            .search-bar button {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                Quotev<span>主页</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">浏览</a></li>
+                    <li><a href="#">测试</a></li>
+                    <li><a href="#">故事</a></li>
+                    <li><a href="#">社区</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索你的个性，阅读无限故事</h1>
+                <p>全球最大的互动娱乐社区。参与深度性格测试，阅读沉浸式互动小说，或者创建属于你的原创作品。</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="搜索测试、故事、作者或标签...">
+                    <button type="button" aria-label="搜索">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="cat-card">
+                <span class="cat-icon">🧠</span>
+                <div class="cat-title">性格测试</div>
+                <div class="cat-desc">发现真实的自己</div>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">📖</span>
+                <div class="cat-title">互动小说</div>
+                <div class="cat-desc">你的选择决定结局</div>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🎬</span>
+                <div class="cat-title">同人创作</div>
+                <div class="cat-desc">基于影视与动漫</div>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">✍️</span>
+                <div class="cat-title">创意写作</div>
+                <div class="cat-desc">发布你的原创故事</div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-section">
+            <div class="stat-item">
+                <h3>10M+</h3>
+                <p>活跃用户</p>
+            </div>
+            <div class="stat-item">
+                <h3>500K+</h3>
+                <p>互动故事</p>
+            </div>
+            <div class="stat-item">
+                <h3>1M+</h3>
+                <p>性格测试</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>社区活跃</p>
+            </div>
+        </section>
+
+        <!-- Featured Tests -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门性格测试</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-3">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/quotev1/400/250" alt="动漫风格测试封面">
+                        <span class="card-type">测试</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">动漫人物转生：你的前世是谁？</h3>
+                        <div class="card-meta">
+                            <span>⭐ 4.8 (12k)</span>
+                            <span>15 分钟</span>
+                        </div>
+                        <p class="card-excerpt">通过一系列问题，揭示你转生到动漫世界的身份。是热血少年、温柔少女还是神秘反派？</p>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"></div>
+                                <span class="author-name">AnimeFan_99</span>
+                            </div>
+                            <span>1.2w 采取</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/quotev2/400/250" alt="心理分析测试封面">
+                        <span class="card-type">测试</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">MBTI 进阶：你是哪种 INFP？</h3>
+                        <div class="card-meta">
+                            <span>⭐ 4.9 (8.5k)</span>
+                            <span>20 分钟</span>
+                        </div>
+                        <p class="card-excerpt">深入探索 INFP 的内心世界，了解你的理想主义、价值观以及在这个复杂世界中的定位。</p>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"></div>
+                                <span class="author-name">PsychLab</span>
+                            </div>
+                            <span>8.9w 采取</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/quotev3/400/250" alt="爱情测试封面">
+                        <span class="card-type">测试</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">你的理想恋爱对象是谁？</h3>
+                        <div class="card-meta">
+                            <span>⭐ 4.7 (5k)</span>
+                            <span>10 分钟</span>
+                        </div>
+                        <p class="card-excerpt">根据你的性格和喜好，测试你会和哪种类型的伴侣产生化学反应。</p>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"></div>
+                                <span class="author-name">LoveDoc</span>
+                            </div>
+                            <span>4.5w 采取</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">平台特色</h2>
+            </div>
+            <div class="features">
+                <div class="feature-box">
+                    <div class="feature-icon">🎮</div>
+                    <h3>互动阅读体验</h3>
+                    <p>不再是被动阅读。在故事中做出关键选择，每一个决定都会导向不同的结局分支。</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎨</div>
+                    <h3>个性化展示</h3>
+                    <p>创建属于你的个人主页，展示你的测试结果、收藏的故事和创作的作品集。</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">👥</div>
+                    <h3>活跃创作者社区</h3>
+                    <p>加入数百万用户的讨论区，分享心得，寻找志同道合的伙伴，参与每周挑战。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Stories -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">最新互动故事</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/story1/400/250" alt="奇幻故事封面">
+                        <span class="card-type">故事</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">暗夜学院：吸血鬼的宿命</h3>
+                        <div class="card-meta">
+                            <span>✍️ 精灵女王</span>
+                            <span>更新中</span>
+                        </div>
+                        <p class="card-excerpt">你转学到了一所神秘的学校，却发现这里的每个人都不是人类。在这个充满危险与诱惑的世界里，你该如何生存？</p>
+                        <div class="card-footer">
+                            <span>💬 1,203 评论</span>
+                            <span>📖 45k 阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/story2/400/250" alt="科幻故事封面">
+                        <span class="card-type">故事</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">火星殖民地：最后的防线</h3>
+                        <div class="card-meta">
+                            <span>✍️ SciFiWriter</span>
+                            <span>更新中</span>
+                        </div>
+                        <p class="card-excerpt">人类移民火星后，外星生物开始入侵。作为指挥官，你将如何带领幸存者反击？</p>
+                        <div class="card-footer">
+                            <span>💬 890 评论</span>
+                            <span>📖 32k 阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/story3/400/250" alt="校园故事封面">
+                        <span class="card-type">故事</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">校园恋爱模拟器：高冷校草</h3>
+                        <div class="card-meta">
+                            <span>✍️ 恋爱达人</span>
+                            <span>已完结</span>
+                        </div>
+                        <p class="card-excerpt">经典校园恋爱故事，三个男主角，三种截然不同的性格。你的选择将决定谁会陪你在校门口等待放学。</p>
+                        <div class="card-footer">
+                            <span>💬 3,500 评论</span>
+                            <span>📖 120k 阅读</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于 Quotev主页</h4>
+                <p style="font-size: 0.9rem; color: #b2bec3; line-height: 1.8;">
+                    我们致力于为全球用户提供最优质的互动娱乐体验。无论你是喜欢深度测试、沉浸式阅读还是创意写作，这里都是你的家。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>探索</h4>
+                <ul>
+                    <li><a href="#">最新故事</a></li>
+                    <li><a href="#">热门测试</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">标签浏览</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>社区</h4>
+                <ul>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">创作者指南</a></li>
+                    <li><a href="#">规则条款</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Discord</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 Quotev主页. All rights reserved. 此页面为概念设计演示。
+        </div>
+    </footer>
+
+</body>
+                          </html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="自荐书封面图片在线设计工具，提供多种专业自荐信封面模板、简历封面设计素材，支持一键套用与高清下载，助您打造出色的求职形象。">
+    <meta name="keywords" content="自荐书封面图片,简历封面设计,求职信模板,求职简历封面,简历制作工具">
+    <title>自荐书封面图片-专业求职简历封面设计与模板下载平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 1rem var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 30px 0 0 30px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Main Content */
+        main {
+            max-width: var(--container-width);
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            margin-bottom: 4rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Usage Guide */
+        .guide-section {
+            background-color: #eef2f7;
+            padding: 3rem 1rem;
+            border-radius: 12px;
+            margin-bottom: 4rem;
+        }
+
+        .guide-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 1rem 1rem;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .features {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                封面<span>设计</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">模板库</a></li>
+                    <li><a href="#">案例展示</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">立即设计</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>打造完美的自荐书封面图片</h1>
+        <p>海量专业简历封面模板，一键套用，无需设计基础。让您的求职材料在第一时间抓住HR的眼球。</p>
+        <div class="search-box">
+            <input type="text" placeholder="搜索模板关键词，如：简约、商务、插画...">
+            <button>搜索</button>
+        </div>
+    </section>
+
+    <main>
+        <!-- 核心需求区 -->
+        <section class="section-header">
+            <h2>热门自荐书封面模板</h2>
+            <p>根据不同行业与求职意向，精选最合适的封面设计风格</p>
+        </section>
+
+        <div class="category-grid">
+            <!-- 卡片 1 -->
+            <article class="category-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/resume1/400/300" alt="商务风自荐书封面">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">商务职场</span>
+                    <h3 class="card-title">商务精英风</h3>
+                    <p class="card-desc">适合金融、管理、咨询等行业的正式求职场景，体现专业与稳重。</p>
+                </div>
+            </article>
+
+            <!-- 卡片 2 -->
+            <article class="category-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/resume2/400/300" alt="简约风自荐书封面">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">创意简约</span>
+                    <h3 class="card-title">极简主义</h3>
+                    <p class="card-desc">去除冗余装饰，突出个人信息，适合互联网、设计、创意类岗位。</p>
+                </div>
+            </article>
+
+            <!-- 卡片 3 -->
+            <article class="category-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/resume3/400/300" alt="文艺风自荐书封面">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">文艺清新</span>
+                    <h3 class="card-title">文艺清新风</h3>
+                    <p class="card-desc">运用柔和色调与手绘元素，适合教育、艺术、新媒体等岗位。</p>
+                </div>
+            </article>
+
+            <!-- 卡片 4 -->
+            <article class="category-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/resume4/400/300" alt="科技风自荐书封面">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">科技前沿</span>
+                    <h3 class="card-title">科技蓝调</h3>
+                    <p class="card-desc">深蓝色调搭配科技感线条，彰显技术实力，适合程序员、工程师。</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- 设计优势 -->
+        <section class="features">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="feature-text">
+                    <h3>安全可靠</h3>
+                    <p>所有模板均为原创设计，文件格式经过严格筛选，确保打印清晰无错。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="feature-text">
+                    <h3>极速编辑</h3>
+                    <p>拖拽式操作，支持修改文字、更换背景图和调整配色，5分钟即可完成。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <div class="feature-text">
+                    <h3>高清下载</h3>
+                    <p>支持JPG、PNG及PDF格式下载，满足不同打印和电子投递需求。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用指南 -->
+        <section class="guide-section">
+            <div class="section-header">
+                <h2>如何制作自荐书封面图片</h2>
+                <p>简单的三步，让您的简历封面焕然一新</p>
+            </div>
+            <div class="guide-container">
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h3>选择模板</h3>
+                            <p>在上方模板库中浏览，找到符合您求职行业和个人风格的封面图片。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h3>个性化修改</h3>
+                            <p>点击“编辑”按钮，在线替换姓名、照片、学校及联系方式等关键信息。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h3>下载保存</h3>
+                            <p>确认无误后，一键下载高清自荐书封面图片，直接插入Word文档使用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="section-header">
+            <h2>常见问题解答</h2>
+        </section>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <details style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">自荐书封面图片的尺寸是多少？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">通常A4纸张的封面设计比例为210mm x 297mm，在设计软件中建议使用300dpi的分辨率以保证打印清晰度。</p>
+            </details>
+            <details style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">封面需要放照片吗？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">建议放置一寸或二寸免冠证件照，这能增加简历的亲和力，但需注意照片背景色与封面设计风格协调。</p>
+            </details>
+            <details style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">下载的图片可以直接插入Word吗？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">可以，但建议在插入前调整图片大小，使其完美贴合页面边距，避免打印时出现裁切问题。</p>
+            </details>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">设计师招募</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>模板分类</h4>
+                <ul>
+                    <li><a href="#">商务简历</a></li>
+                    <li><a href="#">个人简历</a></li>
+                    <li><a href="#">求职信模板</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助支持</h4>
+                <ul>
+                    <li><a href="#">使用教程</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 自荐书封面图片设计平台. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yandex网站进入 - 全球搜索引擎导航与Yandex浏览器官方入口</title>
+    <meta name="description" content="Yandex网站进入导航，提供Yandex搜索引擎、Yandex浏览器、Yandex地图、Yandex Translate等官方服务入口。支持俄语、英语及中文的便捷搜索服务，快速访问Yandex核心功能。">
+    <meta name="keywords" content="Yandex网站进入, Yandex搜索, Yandex浏览器, Yandex官网, 俄罗斯搜索引擎">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #fc3f1d;
+            --primary-hover: #e0340d;
+            --secondary-color: #2b5df5;
+            --text-dark: #222;
+            --text-gray: #666;
+            --bg-light: #f4f6f8;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0e6 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .main-search-box {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            display: inline-flex;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .main-search-box input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .main-search-box button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .main-search-box button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Quick Access Grid */
+        .quick-access {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: var(--text-dark);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(252, 63, 29, 0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #1a45c2;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--text-dark);
+            color: var(--text-dark);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        /* Info Section */
+        .info-section {
+            background: var(--white);
+            padding: 60px 20px;
+        }
+
+        .info-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .info-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .info-text p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .info-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .info-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .info-visual {
+            background: #f0f4ff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .info-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: var(--white);
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-gray);
+            background: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .main-search-box {
+                flex-direction: column;
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            .main-search-box input {
+                width: 100%;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            .main-search-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#fc3f1d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#fc3f1d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#fc3f1d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Yandex<span>导航</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#search">搜索引擎</a>
+                <a href="#services">核心服务</a>
+                <a href="#browser">浏览器</a>
+                <a href="#about">关于Yandex</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="search">
+            <div class="hero-content">
+                <h1>Yandex网站进入</h1>
+                <p>俄罗斯最大的搜索引擎与互联网服务提供商，为您提供高效的搜索、翻译、地图及云存储服务。</p>
+                <form class="main-search-box" onsubmit="event.preventDefault(); window.location.href='https://yandex.com/';">
+                    <input type="text" placeholder="在Yandex搜索..." aria-label="搜索框">
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="quick-access" id="services">
+            <h2 class="section-title">Yandex核心服务入口</h2>
+            <div class="grid-container">
+                <!-- 搜索引擎 -->
+                <article class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Yandex搜索引擎</h3>
+                    <p>俄罗斯及东欧地区最受欢迎的搜索引擎，支持俄语、英语及多种语言的智能检索。</p>
+                    <a href="https://yandex.com/" class="btn btn-primary">进入官网</a>
+                </article>
+
+                <!-- 翻译 -->
+                <article class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Yandex Translate</h3>
+                    <p>强大的在线翻译工具，支持超过90种语言互译，提供文本、文档及语音翻译服务。</p>
+                    <a href="https://translate.yandex.com/" class="btn btn-primary">开始翻译</a>
+                </article>
+
+                <!-- 地图 -->
+                <article class="service-card">
+                    <div class="service-icon">🗺️</div>
+                    <h3>Yandex地图</h3>
+                    <p>提供实时路况、公共交通路线规划、街景浏览及企业信息查询的地图服务。</p>
+                    <a href="https://maps.yandex.com/" class="btn btn-primary">查看地图</a>
+                </article>
+
+                <!-- 邮箱 -->
+                <article class="service-card">
+                    <div class="service-icon">✉️</div>
+                    <h3>Yandex邮箱</h3>
+                    <p>大容量免费邮箱服务，支持垃圾邮件过滤、日历集成及文件附件管理。</p>
+                    <a href="https://mail.yandex.com/" class="btn btn-primary">登录邮箱</a>
+                </article>
+
+                <!-- 浏览器 -->
+                <article class="service-card" id="browser">
+                    <div class="service-icon">🧩</div>
+                    <h3>Yandex浏览器</h3>
+                    <p>基于Chromium内核开发的浏览器，内置智能助手、广告拦截及隐私保护功能。</p>
+                    <a href="https://browser.yandex.com/" class="btn btn-primary">下载浏览器</a>
+                </article>
+
+                <!-- 云盘 -->
+                <article class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>Yandex Disk</h3>
+                    <p>跨平台云存储服务，方便您存储文件、备份照片并在设备间同步数据。</p>
+                    <a href="https://disk.yandex.com/" class="btn btn-primary">访问云盘</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info-grid">
+                    <div class="info-text">
+                        <h2>为什么选择Yandex？</h2>
+                        <p>Yandex是俄罗斯最大的互联网公司，其搜索引擎的市场份额超过60%。除了基础的搜索功能外，Yandex还提供了一系列极具创新性的服务，旨在解决用户的日常需求。</p>
+                        <ul class="info-list">
+                            <li>覆盖广泛的中文资源索引，方便查找俄语学习资料。</li>
+                            <li>强大的自然语言处理技术，提供精准的搜索结果。</li>
+                            <li>独特的智能助手功能，提升网络浏览体验。</li>
+                            <li>严格的数据隐私保护政策，保障用户信息安全。</li>
+                        </ul>
+                    </div>
+                    <div class="info-visual">
+                        <img src="https://picsum.photos/seed/yandextech/500/350.jpg" alt="Yandex技术示意图" width="500" height="350">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2 class="section-title">常见问题</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Yandex在中国可以使用吗？</div>
+                <div class="faq-answer">
+                    <p>Yandex主要面向俄罗斯及独联体国家用户，在国内访问可能会受到网络环境影响，建议在稳定的网络环境下使用。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何设置Yandex为默认搜索引擎？</div>
+                <div class="faq-answer">
+                    <p>您可以在浏览器设置中找到搜索引擎选项，将Yandex添加为首选搜索引擎，并设置为默认。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Yandex浏览器支持哪些平台？</div>
+                <div class="faq-answer">
+                    <p>Yandex浏览器支持Windows、macOS、Linux以及Android和iOS移动操作系统。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Yandex Translate支持中文吗？</div>
+                <div class="faq-answer">
+                    <p>是的，Yandex Translate支持中文与俄语、英语、日语等多种语言的互译功能。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="https://yandex.com/">Yandex首页</a></li>
+                    <li><a href="https://translate.yandex.com/">在线翻译</a></li>
+                    <li><a href="https://browser.yandex.com/">Yandex浏览器</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>服务支持</h4>
+                <ul>
+                    <li><a href="https://yandex.com/support/">帮助中心</a></li>
+                    <li><a href="https://pdd.yandex.com/">域名注册</a></li>
+                    <li><a href="https://yandex.com/legal/">法律条款</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    本站仅为Yandex相关服务的导航与介绍页面，旨在为用户提供便捷的访问入口。所有品牌商标归Yandex公司所有。
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Yandex服务导航站. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    child.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

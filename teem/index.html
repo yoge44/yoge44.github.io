@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TEEMZONE 男士钱包官网，提供真皮钱包、卡包、零钱包等商务与休闲风格皮具产品。专注男士皮具品质，在线选购耐用实用的高档男士钱包。">
+    <meta name="keywords" content="TEEMZONE, 男士钱包, 真皮钱包, 休闲钱包, 商务钱包, 皮具, 男士配饰">
+    <title>TEEMZONE 男士钱包-高品质真皮皮具与商务配饰选购平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-icon {
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a252f;
+        }
+
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Product Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--border-color);
+        }
+
+        .product-image {
+            height: 260px;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 2px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .btn-sm:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            position: relative;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            color: #fff;
+        }
+
+        .category-overlay h3 {
+            font-size: 18px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: #fff;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .guide-content p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .check-list li::before {
+            content: "✔";
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .guide-image img {
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: var(--bg-color);
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-size: 14px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+            <a href="#" class="logo">TEEMZONE<span>.</span></a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#products">男士钱包</a></li>
+                    <li><a href="#categories">分类选购</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="btn-icon">🔍</div>
+                <div class="btn-icon">🛒</div>
+                <a href="#" class="btn-primary">立即选购</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">真皮材质</span>
+                    <span class="tag">商务首选</span>
+                    <span class="tag">精致工艺</span>
+                </div>
+                <h1>TEEMZONE 男士钱包</h1>
+                <p>为现代绅士打造，融合实用功能与经典美学。从日常通勤到商务场合，让每一张卡片都井井有条。</p>
+                <a href="#products" class="btn-primary" style="background: #fff; color: var(--primary-color);">浏览系列</a>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container feature-grid">
+                <div class="feature-item">
+                    <i>✦</i>
+                    <h3>精选头层牛皮</h3>
+                    <p>严格甄选优质头层牛皮，触感细腻，透气性好，越用越有光泽。</p>
+                </div>
+                <div class="feature-item">
+                    <i>✦</i>
+                    <h3>精细缝线工艺</h3>
+                    <p>采用加固缝线技术，经久耐用，不易脱线，体现专业工匠精神。</p>
+                </div>
+                <div class="feature-item">
+                    <i>✦</i>
+                    <h3>实用收纳设计</h3>
+                    <p>科学分区设计，多卡位、拉链袋、证件槽一应俱全，收纳更高效。</p>
+                </div>
+                <div class="feature-item">
+                    <i>✦</i>
+                    <h3>经典时尚外观</h3>
+                    <p>简约而不简单，经典配色搭配现代剪裁，百搭各种着装风格。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section id="products" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">热销推荐</h2>
+                    <span class="section-subtitle">为您甄选最受欢迎的款式</span>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge">热卖</span>
+                            <img src="https://picsum.photos/seed/wallet1/400/400" alt="经典长款商务钱包">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">商务系列</div>
+                            <h3 class="product-title">经典长款商务钱包</h3>
+                            <div class="product-footer">
+                                <span class="price">¥299</span>
+                                <a href="#" class="btn-sm">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/wallet2/400/400" alt="短款卡包">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">休闲系列</div>
+                            <h3 class="product-title">简约短款卡包</h3>
+                            <div class="product-footer">
+                                <span class="price">¥159</span>
+                                <a href="#" class="btn-sm">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge">新品</span>
+                            <img src="https://picsum.photos/seed/wallet3/400/400" alt="立体零钱包">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">随身配件</div>
+                            <h3 class="product-title">立体立体零钱包</h3>
+                            <div class="product-footer">
+                                <span class="price">¥89</span>
+                                <a href="#" class="btn-sm">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/wallet4/400/400" alt="多功能双拼钱包">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">双拼系列</div>
+                            <h3 class="product-title">多功能双拼钱包</h3>
+                            <div class="product-footer">
+                                <span class="price">¥219</span>
+                                <a href="#" class="btn-sm">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section id="categories" class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">按风格选购</h2>
+                    <span class="section-subtitle">找到最适合您的配饰</span>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://picsum.photos/seed/cat1/600/400" alt="商务正装钱包">
+                        <div class="category-overlay">
+                            <h3>商务正装</h3>
+                            <p>适合正式场合</p>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://picsum.photos/seed/cat2/600/400" alt="休闲潮流钱包">
+                        <div class="category-overlay">
+                            <h3>休闲潮流</h3>
+                            <p>年轻活力风格</p>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://picsum.photos/seed/cat3/600/400" alt="多功能卡包">
+                        <div class="category-overlay">
+                            <h3>卡包</h3>
+                            <p>极简收纳</p>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://picsum.photos/seed/cat4/600/400" alt="旅行钱夹">
+                        <div class="category-overlay">
+                            <h3>旅行钱夹</h3>
+                            <p>轻薄便携</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buying Guide -->
+        <section id="guide" class="section guide-section">
+            <div class="container guide-container">
+                <div class="guide-content">
+                    <h2>如何挑选合适的男士钱包？</h2>
+                    <p>选择一款合适的钱包不仅是收纳工具，更是个人品味与身份的体现。TEEMZONE 为您提供专业的选购建议：</p>
+                    <ul class="check-list">
+                        <li><strong>材质选择：</strong>头层牛皮最耐用，二层牛皮性价比高，尼龙材质适合运动休闲。</li>
+                        <li><strong>尺寸大小：</strong>长款钱包容量大但显臃肿，短款钱包轻便但需频繁整理卡片。</li>
+                        <li><strong>功能需求：</strong>如果卡片多，选择多卡位设计；经常出差，选择拉链款更安全。</li>
+                        <li><strong>风格搭配：</strong>深色系（黑、棕）百搭且显稳重，浅色系更显年轻时尚。</li>
+                    </ul>
+                </div>
+                <div class="guide-image">
+                    <img src="https://picsum.photos/seed/guide/600/400" alt="男士钱包搭配指南">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section faq-section">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">TEEMZONE 男士钱包的保修期是多久？ <span>+</span></div>
+                    <div class="faq-answer">我们提供6个月的质保服务，涵盖非人为因素导致的脱线、开胶及材质质量问题。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">真皮钱包需要特殊的保养方法吗？ <span>+</span></div>
+                    <div class="faq-answer">建议定期使用皮革保养油擦拭，避免长时间暴晒或接触尖锐物体，以保持皮革柔韧。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">可以定制刻字服务吗？ <span>+</span></div>
+                    <div class="faq-answer">部分限量款支持刻字服务，下单前请联系客服咨询具体款式是否支持定制。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如果不合适可以退换货吗？ <span>+</span></div>
+                    <div class="faq-answer">支持7天无理由退换货，请确保产品吊牌完好，且未使用过。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>TEEMZONE.</h3>
+                    <p>致力于为现代男士提供高品质、高性价比的皮具产品。每一款钱包都经过严格质检，只为给您带来卓越的使用体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>购物指南</h4>
+                    <ul>
+                        <li><a href="#">购物流程</a></li>
+                        <li><a href="#">支付方式</a></li>
+                        <li><a href="#">配送说明</a></li>
+                        <li><a href="#">退换政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>品牌支持</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">隐私条款</a></li>
+                        <li><a href="#">使用条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>订阅优惠</h4>
+                    <div class="newsletter">
+                        <p style="font-size: 13px; margin-bottom: 10px; opacity: 0.8;">订阅我们的邮件，第一时间获取新品资讯与专属折扣。</p>
+                        <input type="email" placeholder="输入您的邮箱">
+                        <button class="btn-primary" style="width: 100%; border: none; cursor: pointer;">订阅</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TEEMZONE 男士钱包. All Rights Reserved. 本页面为展示用途，非实际销售页面。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('main-nav').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+  </html>

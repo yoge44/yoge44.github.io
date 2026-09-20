@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CS1.6地图补丁下载站，提供cs1.6经典地图、1.6改版地图、1.6枪模地图及dust2_urban等流行地图包的安装指南与下载服务。">
+    <meta name="keywords" content="cs1.6地图补丁,cs1.6地图下载,cs1.6改版地图,1.6枪模地图,dust2_urban">
+    <title>CS1.6地图补丁-经典地图与改版地图资源下载站</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 15px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f0f2f5;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 6px 10px;
+            outline: none;
+            width: 180px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            padding: 0 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 32px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 24px;
+        }
+
+        /* Content Sections */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1e4e8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .section-title a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Map Card Grid */
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .map-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .map-thumb {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .map-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .map-info {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .map-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .map-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .map-stats span {
+            margin-right: 10px;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .category-list span {
+            background: #eee;
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .install-guide {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .install-guide ol {
+            padding-left: 18px;
+            margin-top: 10px;
+        }
+
+        .install-guide li {
+            margin-bottom: 6px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            padding: 40px var(--spacing-unit);
+            margin-top: 40px;
+        }
+
+        .faq-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            background: var(--accent-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding-left: 36px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            .nav-menu {
+                margin: 10px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">CS<span>1.6</span>地图补丁</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">热门地图</a></li>
+                <li><a href="#">枪模地图</a></li>
+                <li><a href="#">改版地图</a></li>
+                <li><a href="#">安装教程</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索地图名称...">
+            <button type="button">搜索</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>重温经典：CS1.6地图补丁资源中心</h1>
+        <p>提供最全的CS1.6官方地图、经典改版地图及枪模地图下载。修复地图缺失问题，体验不一样的爆破与团队竞技。</p>
+        <div class="cta-buttons">
+            <a href="#hot-maps" class="btn btn-primary">热门地图下载</a>
+            <a href="#guide" class="btn btn-outline">查看安装指南</a>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    <div class="content-area">
+        <!-- 热门推荐 -->
+        <section id="hot-maps">
+            <div class="section-title">
+                <h2>🔥 热门地图推荐</h2>
+                <a href="#">查看全部 ></a>
+            </div>
+            <div class="map-grid">
+                <!-- Card 1 -->
+                <article class="map-card">
+                    <div class="map-thumb">
+                        <span class="map-tag">经典</span>
+                        <img src="https://picsum.photos/seed/dust2/400/250" alt="Dust2 地图预览">
+                    </div>
+                    <div class="map-info">
+                        <h3 class="map-name">Dust2_urban_v2</h3>
+                        <p class="map-desc">城市风格Dust2改版地图，保留了经典架构，增加了城市废墟元素和光影效果，适合团队竞技。</p>
+                        <div class="map-meta">
+                            <div class="map-stats">
+                                <span>大小: 120MB</span>
+                                <span>热度: 9.8</span>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="map-card">
+                    <div class="map-thumb">
+                        <span class="map-tag">枪模</span>
+                        <img src="https://picsum.photos/seed/awp/400/250" alt="AWP地图预览">
+                    </div>
+                    <div class="map-info">
+                        <h3 class="map-name">AWP_Zeus_VIP</h3>
+                        <p class="map-desc">专为AWP爱好者设计的VIP地图，利用高空制高点，提供极限狙击体验，地形复杂多变。</p>
+                        <div class="map-meta">
+                            <div class="map-stats">
+                                <span>大小: 85MB</span>
+                                <span>热度: 9.5</span>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="map-card">
+                    <div class="map-thumb">
+                        <span class="map-tag">改版</span>
+                        <img src="https://picsum.photos/seed/inferno/400/250" alt="Inferno地图预览">
+                    </div>
+                    <div class="map-info">
+                        <h3 class="map-name">Inferno_夜店版</h3>
+                        <p class="map-desc">Inferno地图的霓虹夜店风格改版，加入了音乐灯光效果，警匪对抗更加激烈。</p>
+                        <div class="map-meta">
+                            <div class="map-stats">
+                                <span>大小: 150MB</span>
+                                <span>热度: 9.2</span>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="map-card">
+                    <div class="map-thumb">
+                        <span class="map-tag">竞技</span>
+                        <img src="https://picsum.photos/seed/nuke/400/250" alt="Nuke地图预览">
+                    </div>
+                    <div class="map-info">
+                        <h3 class="map-name">Nuke_Mirror</h3>
+                        <p class="map-desc">Nuke地图的镜像版，对称设计，适合1v1对决，考验微操和战术配合。</p>
+                        <div class="map-meta">
+                            <div class="map-stats">
+                                <span>大小: 95MB</span>
+                                <span>热度: 9.0</span>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">立即下载</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section id="latest-updates" style="margin-top: 40px;">
+            <div class="section-title">
+                <h2>📝 最新地图更新</h2>
+                <a href="#">更多更新 ></a>
+            </div>
+            <ul class="category-list" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <li>
+                    <a href="#">
+                        <span>[更新] de_train_v3 地图纹理优化补丁</span>
+                        <span>2023-10-24</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>[新增] cs_assault_2005 永恒经典版</span>
+                        <span>2023-10-22</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>[修复] de_dust2_skybox 地图天空贴图错误</span>
+                        <span>2023-10-20</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>[新增] aim_ak-47_bhop 极速跳点地图</span>
+                        <span>2023-10-18</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>[更新] de_nuke_2 地图模型修复</span>
+                        <span>2023-10-15</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <aside>
+        <div class="sidebar-card">
+            <h3 class="sidebar-title">地图分类</h3>
+            <ul class="category-list">
+                <li><a href="#">爆破模式 <span>120</span></a></li>
+                <li><a href="#">团队竞技 <span>85</span></a></li>
+                <li><a href="#">人质解救 <span>32</span></a></li>
+                <li><a href="#">1v1 对决 <span>45</span></a></li>
+                <li><a href="#">跳点训练 <span>18</span></a></li>
+                <li><a href="#">枪模地图 <span>60</span></a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-card" id="guide">
+            <h3 class="sidebar-title">安装指南</h3>
+            <div class="install-guide">
+                <p>CS1.6地图补丁安装通常需要替换游戏根目录下的 <code>cstrike</code> 文件夹中的地图文件。</p>
+                <ol>
+                    <li>下载地图压缩包并解压。</li>
+                    <li>打开游戏安装目录，找到 <code>cstrike/maps</code> 文件夹。</li>
+                    <li>将解压后的 <code>.bsp</code> 和 <code>.txt</code> 文件复制进去。</li>
+                    <li>启动游戏，在控制台输入 <code>map 地图名称</code> 即可进入。</li>
+                </ol>
+                <p style="margin-top:10px; font-size:12px; color:#e74c3c;">注意：部分地图需要同时安装对应的枪模文件。</p>
+            </div>
+        </div>
+
+        <div class="sidebar-card">
+            <h3 class="sidebar-title">常见问题</h3>
+            <ul class="category-list">
+                <li><a href="#">地图无法显示怎么办？</a></li>
+                <li><a href="#">如何安装枪模地图？</a></li>
+                <li><a href="#">1.6地图与CSGO地图通用吗？</a></li>
+                <li><a href="#">下载速度慢如何解决？</a></li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<section class="faq-section">
+    <div class="faq-inner">
+        <div class="section-title">
+            <h2>❓ 常见问题解答</h2>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">为什么下载的地图在游戏中显示不出来？</div>
+            <div class="faq-answer">请检查文件是否完整解压，确保后缀名为 .bsp，并且放置在 cstrike/maps 目录下。如果是枪模地图，请检查是否安装了对应的枪模包。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">CS1.6地图补丁会影响游戏平衡性吗？</div>
+            <div class="faq-answer">改版地图通常经过玩家测试，旨在增加趣味性。部分竞技地图可能对新手不友好，建议在休闲模式体验后再尝试竞技。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">如何更新CS1.6地图？</div>
+            <div class="faq-answer">直接覆盖原地图文件即可。如果遇到文件冲突，建议先备份原文件，再进行替换。</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">免责声明</a>
+            <a href="#">联系合作</a>
+            <a href="#">用户协议</a>
+            <a href="#">RSS订阅</a>
+        </div>
+        <p class="copyright">Copyright © 2023 CS1.6地图补丁资源站. All Rights Reserved.</p>
+        <p class="copyright" style="font-size: 12px; margin-top: 5px;">本站资源仅供个人学习交流使用，请于下载后24小时内删除。</p>
+    </div>
+</footer>
+
+<script>
+    // 简单的FAQ折叠逻辑
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+
+    // 简单的搜索框交互（仅演示）
+    const searchBtn = document.querySelector('.search-box button');
+    const searchInput = document.querySelector('.search-box input');
+    
+    searchBtn.addEventListener('click', () => {
+        if(searchInput.value.trim()) {
+            alert('正在搜索：' + searchInput.value);
+        }
+    });
+    
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim()) {
+            alert('正在搜索：' + searchInput.value);
+        }
+    });
+</script>
+
+</body>
+</html>
